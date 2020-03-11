@@ -72,5 +72,42 @@ for(let myVarle=0;myVarle<10;myVarle++)
 //console.log(myVarle);
 
 
+const myObj = {
+    name:"Henry",
+    age:18
+};
+
+myObj.name="Sandy";
+myObj.hobbies =[];
+myObj.hobbies.push( 'Listening Music ');
+console.log(myObj);
+
+//traditional function declaration
+function myFunction(a,b)
+{
+    return Number( a ) + Number ( b );
+
+}
+
+//Es6 style 
+myFunction =( a,b ) => Number( a ) + Number ( b );
+console.log( myFunction( 3,8 ) );
+
+myOtherFunction = ( a,b ) =>
+{
+    const myAnswer = Number ( a ) + Number( b );
+    return myAnswer;
+}
+console.log( myOtherFunction( 34,6 ) );
+
+addNums = ( x=0, y=0 ) => x + y;
+console.log( addNums() );
 
 
+findHighNum = ( ...args ) => {
+    console.log( args );
+    return args;
+}
+
+addAllNums = ( ...nums) => nums.reduce( ( a,v ) => a + v);
+console.log( addAllNums ( 64,6,10 ) );
