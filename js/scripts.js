@@ -104,10 +104,38 @@ addNums = ( x=0, y=0 ) => x + y;
 console.log( addNums() );
 
 
-findHighNum = ( ...args ) => {
-    console.log( args );
-    return args;
+findHighNum = ( minNum=0, ...args ) => {
+    minNum = Number( minNum );
+    if ( minNum === NaN ) minNum = 0;
+    const  highNums = args.filter( ( element ) => element > minNum );
+    return highNums;
 }
-
+console.log( findHighNum( 5,4,8,20,50,60,56,24,-554 ) );
 addAllNums = ( ...nums) => nums.reduce( ( a,v ) => a + v);
 console.log( addAllNums ( 64,6,10 ) );
+
+
+
+
+
+/**
+ * Template Literals
+ */
+
+
+ const helloOver ='Hello,World';
+ const name='sam';
+ const myNewString = `Hey there,my name is  ${name}; I\' like to give you a big: "${helloOver}"!!`;
+ console.log(myNewString);
+
+
+ const newArray = [ 'Hello',',', 'World', '!'];
+    console.log( newArray );
+    console.log( ...newArray );
+
+
+const aBunchOfNums = [5,10,36,58];
+console.log( addAllNums( 5,10,36,58 ) );
+//console.log( addAllNums( aBunchOfNums ) );
+console.log( addAllNums( ...aBunchOfNums ) );
+
